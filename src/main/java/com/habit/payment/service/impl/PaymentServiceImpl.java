@@ -14,8 +14,13 @@ public class PaymentServiceImpl implements PaymentService {
     private PaymentRepository paymentRepository;
 
     @Override
-    public PaymentEntity create(PaymentEntity paymentEntity) {
-        paymentEntity.setDataPagamento(OffsetDateTime.now());
-        return paymentRepository.save(paymentEntity);
+    public PaymentEntity registrarPagamento(PaymentEntity paymentEntity)  {
+        try{
+            paymentEntity.setDataPagamento(OffsetDateTime.now());
+            return paymentRepository.save(paymentEntity);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }

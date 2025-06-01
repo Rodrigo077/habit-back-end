@@ -4,5 +4,5 @@ import com.habit.payment.entity.PaymentEntity;
 
 public interface PaymentService {
 
-    PaymentEntity create(PaymentEntity paymentEntity);
+    PaymentEntity registrarPagamento(PaymentEntity paymentEntity);
 }
